@@ -16,6 +16,9 @@ brew "wget"
 brew "yarn"
 brew "zsh"
 brew "zsh-completions"
+brew "usbmuxd", args: ["HEAD"]
+brew "libimobiledevice", args: ["HEAD"]
+brew "ios-webkit-debug-proxy", args: ["HEAD"]
 
 # Applications
 cask "alfred"
@@ -31,6 +34,7 @@ cask "postgres"
 cask "psequel"
 cask "robo-3t"
 cask "sequel-pro"
+cask "slack"
 cask "spectacle"
 cask "spotify"
 cask "teamviewer"
