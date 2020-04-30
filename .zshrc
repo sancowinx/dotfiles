@@ -98,15 +98,30 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+
+
+# Initialize asdf this needs to came before bash_completion
 . /usr/local/opt/asdf/asdf.sh
 
-export PATH="/usr/local/sbin:$PATH"
 
+# Export binaries that is inside these folder
+export PATH="/usr/local/sbin:$PATH"
+export PATH="$HOME/.asdf/bin:$PATH"
+
+
+# direnv hook to the shell, this is required for trigger direnv
 eval "$(direnv hook zsh)"
 
-. /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
 
+# eval scripts
 eval $(thefuck --alias)
 
+
+# trigger asdf to add necessary path
+. ~/.asdf/plugins/java/set-java-home.zsh # Java: https://github.com/halcyon/asdf-java#java_home
+
+
+# Add alias
 alias shit-up-tag="git push upstream --tags"
 alias brew-sync="brew update; brew upgrade; brew cleanup"
+alias rezsh="source ~/.zshrc"
