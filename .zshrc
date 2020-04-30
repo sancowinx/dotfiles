@@ -70,6 +70,17 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
+# Homebrew shell completion
+# https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
+
+
+# This is where it calls the oh-my-zsh config
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -125,3 +136,4 @@ eval $(thefuck --alias)
 alias shit-up-tag="git push upstream --tags"
 alias brew-sync="brew update; brew upgrade; brew cleanup"
 alias rezsh="source ~/.zshrc"
+alias zshconfig="nano ~/.zshrc"
