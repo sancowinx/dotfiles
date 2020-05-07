@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Check if there is a .tool-versions already there yet
-if ! [ -f "$HOME/.tool-versions" ]; then
+if  [ ! -f "$HOME/.tool-versions" ]; then
     echo ".tool-versions is missing"
     # Create .tool-versions to the home folder
     # ?
