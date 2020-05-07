@@ -1,8 +1,11 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# zsh configurations
+export ZSH="$HOME/.oh-my-zsh"                    # Path to your oh-my-zsh installation
+export LANG=en_US.UTF-8                          # Language environment
 
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+# If you come from bash you might have to change your $PATH.
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="/usr/local/sbin:$PATH"
+export PATH="$HOME/.asdf/bin:$PATH"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -87,9 +90,6 @@ source $ZSH/oh-my-zsh.sh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
@@ -110,27 +110,13 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 
-
 # Initialize asdf this needs to came before bash_completion
 . /usr/local/opt/asdf/asdf.sh
-
-
-# Export binaries that is inside these folder
-export PATH="/usr/local/sbin:$PATH"
-export PATH="$HOME/.asdf/bin:$PATH"
-
-
-# direnv hook to the shell, this is required for trigger direnv
-eval "$(direnv hook zsh)"
-
+. ~/.asdf/plugins/java/set-java-home.zsh         # Java: https://github.com/halcyon/asdf-java#java_home
 
 # eval scripts
-eval $(thefuck --alias)
-
-
-# trigger asdf to add necessary path
-. ~/.asdf/plugins/java/set-java-home.zsh # Java: https://github.com/halcyon/asdf-java#java_home
-
+eval "$(direnv hook zsh)"                        # direnv hook to the shell, this is required for trigger direnv
+eval "$(thefuck --alias)"                        # Unfortunately thefuck use brew's python dependency
 
 # Add alias
 alias shit-up-tag="git push upstream --tags"
