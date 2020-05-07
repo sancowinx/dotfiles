@@ -111,7 +111,7 @@ source $ZSH/oh-my-zsh.sh
 
 
 # Initialize asdf this needs to came before bash_completion
-. /usr/local/opt/asdf/asdf.sh
+. $(brew --prefix asdf)/asdf.sh                  # Previously was: . /usr/local/opt/asdf/asdf.sh
 . ~/.asdf/plugins/java/set-java-home.zsh         # Java: https://github.com/halcyon/asdf-java#java_home
 
 # eval scripts
