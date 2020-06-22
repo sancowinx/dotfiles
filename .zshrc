@@ -124,3 +124,4 @@ alias brew-sync="brew update; brew upgrade; brew cleanup"
 alias rezsh="source ~/.zshrc"
 alias zshconfig="nano ~/.zshrc"
 alias flushdns-macos="sudo killall -HUP mDNSResponder"
+alias airport='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport'
