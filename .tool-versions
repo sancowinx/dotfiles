@@ -7,3 +7,5 @@ java adopt-openjdk-14.0.1+7
 nomad 0.11.1
 kotlin 1.3.72
 deno 1.1.3
+dart 2.8.4
+flutter 1.17.5-stable
