@@ -3,7 +3,7 @@ python 3.8.2
 rust stable
 direnv 2.20.0
 golang 1.14.2
-java adopt-openjdk-14.0.1+7
+java adoptopenjdk-14.0.2+12.openj9-0.21.0
 nomad 0.11.1
 kotlin 1.3.72
 deno 1.1.3
